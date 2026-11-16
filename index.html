@@ -198,12 +198,12 @@ section.cta{padding:1.25rem 1.4rem}
 .chips li:nth-child(4n+3){--c:var(--mint)}
 .chips li:nth-child(4n+4){--c:var(--lilac)}
 .chips.tools li{--c:var(--ink);color:var(--ink)!important;background:rgba(255,244,251,.08)!important}
-.tile{color:var(--ink);background:color-mix(in srgb,var(--c) 15%,transparent)!important}
-.tile:nth-child(1){--c:var(--lime)}.tile:nth-child(2){--c:var(--pink-soft)}.tile:nth-child(3){--c:var(--lilac)}
+.tile{color:var(--ink);background:color-mix(in srgb,var(--bgc,var(--c)) 15%,transparent)!important}
+.tile:nth-child(1){--c:var(--lime);--bgc:var(--mint)}.tile:nth-child(2){--c:var(--pink-soft)}.tile:nth-child(3){--c:var(--lilac)}
 .tile b{color:var(--c)}
-.fe-card{color:var(--ink);background:color-mix(in srgb,var(--c) 14%,transparent)}
+.fe-card{color:var(--ink);background:color-mix(in srgb,var(--bgc,var(--c)) 14%,transparent)}
 .fe-card h3{color:var(--c)}
-.fe-1{--c:var(--pop)}.fe-2{--c:var(--lime)}.fe-3{--c:var(--lilac)}
+.fe-1{--c:var(--pop)}.fe-2{--c:var(--lime);--bgc:var(--mint)}.fe-3{--c:var(--lilac)}
 .fact.res{background:color-mix(in srgb,var(--mint) 14%,transparent);color:var(--ink)}
 .fact.res b{color:var(--mint)}
 </style>
