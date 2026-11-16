@@ -180,6 +180,32 @@ section.cta{padding:1.25rem 1.4rem}
   .status i{animation:none}
   .btn,.copy{transition:none}
 }
+
+/* glass / translucent pass */
+.hero{position:relative;isolation:isolate}
+.hero::before,.hero::after{content:"";position:absolute;z-index:-1;border-radius:50%;pointer-events:none}
+.hero::before{width:min(24rem,80vw);height:min(24rem,80vw);background:var(--pop);opacity:.22;right:-6rem;top:-3rem}
+.hero::after{width:min(16rem,55vw);height:min(16rem,55vw);background:var(--lilac);opacity:.14;left:-5rem;bottom:-2rem}
+.status,.role,.tag,.chip,.chips li,.btn,.dock{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.status{background:color-mix(in srgb,var(--ok) 14%,transparent);color:var(--ok)}
+.role{--c:var(--pop);color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent)}
+.tag{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent)}
+.chip{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent)}
+.btn{background:rgba(255,244,251,.1)}
+.btn.main{background:color-mix(in srgb,var(--pop) 22%,transparent);color:var(--accent)}
+.chips li{--c:var(--pink-soft);color:var(--c)!important;background:color-mix(in srgb,var(--c) 16%,transparent)!important}
+.chips li:nth-child(4n+2){--c:var(--butter)}
+.chips li:nth-child(4n+3){--c:var(--mint)}
+.chips li:nth-child(4n+4){--c:var(--lilac)}
+.chips.tools li{--c:var(--ink);color:var(--ink)!important;background:rgba(255,244,251,.08)!important}
+.tile{color:var(--ink);background:color-mix(in srgb,var(--c) 15%,transparent)!important}
+.tile:nth-child(1){--c:var(--lime)}.tile:nth-child(2){--c:var(--pink-soft)}.tile:nth-child(3){--c:var(--lilac)}
+.tile b{color:var(--c)}
+.fe-card{color:var(--ink);background:color-mix(in srgb,var(--c) 14%,transparent)}
+.fe-card h3{color:var(--c)}
+.fe-1{--c:var(--pop)}.fe-2{--c:var(--lime)}.fe-3{--c:var(--lilac)}
+.fact.res{background:color-mix(in srgb,var(--mint) 14%,transparent);color:var(--ink)}
+.fact.res b{color:var(--mint)}
 </style>
 
 
@@ -236,24 +262,24 @@ section.cta{padding:1.25rem 1.4rem}
 <rect x="124" y="288" width="30" height="24" rx="12" class="fx"/>
 <circle cx="139" cy="300" r="4.5" class="fp"/>
 <circle cx="177" cy="300" r="5" class="fline"/><circle cx="205" cy="300" r="5" class="fline"/><circle cx="228" cy="300" r="5" class="fline"/>
-<rect x="4" y="42" width="108" height="48" rx="18" class="fp"/>
+<rect x="4" y="42" width="108" height="48" rx="18" class="fp" fill-opacity=".86"/>
 <rect x="13" y="51" width="22" height="22" rx="7" class="fx"/>
 <path d="M20 62 L24 66 L30 58" class="s nf" style="stroke:#fffafd;stroke-width:2.5"/>
 <text x="42" y="63" font-size="13">¡Hola!</text>
 <rect x="42" y="70" width="56" height="6" rx="3" class="fline"/>
-<rect x="206" y="170" width="148" height="36" rx="18" class="fc"/>
+<rect x="206" y="170" width="148" height="36" rx="18" class="fc" fill-opacity=".8"/>
 <circle cx="224" cy="188" r="10" class="fk"/>
 <path d="M219 188 L223 192 L229 184" class="s nf" style="stroke:#a9e8cb;stroke-width:2.5"/>
 <text x="240" y="193" font-size="13">User friendly</text>
-<rect x="14" y="214" width="58" height="34" rx="17" class="fx"/>
+<rect x="14" y="214" width="58" height="34" rx="17" class="fx" fill-opacity=".8"/>
 <circle cx="55" cy="231" r="13" class="fp"/>
-<circle cx="312" cy="82" r="26" class="fa"/>
+<circle cx="312" cy="82" r="26" class="fa" fill-opacity=".7"/>
 <path d="M300 82 L309 91 L325 73" class="s nf" style="stroke:#2b1430;stroke-width:5"/>
-<polygon points="298,262 322,262 310,288" class="fd"/>
-<circle cx="310" cy="252" r="19" class="fd"/><circle cx="310" cy="252" r="7" class="fp"/>
-<polygon points="64,20 68,30 78,34 68,38 64,48 60,38 50,34 60,30" class="fb"/>
-<polygon points="330,140 333,148 341,151 333,154 330,162 327,154 319,151 327,148" class="fx"/>
-<polygon points="52,282 55,289 62,292 55,295 52,302 49,295 42,292 49,289" class="fc"/>
+
+
+
+
+
 </svg></div>
 </header>
 
