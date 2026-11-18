@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-pagJ7U/SVV1ZQpFI2QsDM8dTtzfsG0wZBvkENHbdpzs='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{color-scheme:dark}</style>
 <title>Juana Laborde · Product Manager</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -235,6 +237,19 @@ h1{text-transform:none;letter-spacing:-.025em}
 h2,.row-head h3{text-transform:none}
 h2{letter-spacing:-.025em;line-height:1}
 .bio small{text-transform:none;letter-spacing:0;font-size:.82rem}
+
+/* scroll animations (solo con JS y sin reduced-motion) */
+html.framed body{display:none}
+.js-anim .rv{opacity:0;transform:translateY(24px) scale(.985);transition:opacity .65s ease,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--d,0)*70ms);will-change:opacity,transform}
+.js-anim .rv.in{opacity:1;transform:none;will-change:auto}
+.js-anim .hero-art{animation:bob 6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.js-anim .hero::before{transform:translateY(calc(var(--sy,0)*-.1px))}
+.js-anim .hero::after{transform:translateY(calc(var(--sy,0)*.06px))}
+.tile b{font-variant-numeric:tabular-nums}
+.progress{position:fixed;z-index:30;left:0;right:0;top:0;height:3px;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--pop),var(--lilac),var(--lime));pointer-events:none}
+.dock a{transition:background .2s,color .2s}
+.dock a.on{background:color-mix(in srgb,var(--pop) 22%,transparent);color:var(--pop)}
 </style>
 
 
@@ -262,7 +277,7 @@ h2{letter-spacing:-.025em;line-height:1}
     <div class="links">
       <a class="btn main" href="#casos">Mirá mis casos</a>
       <a class="btn" href="#contacto">Escribime</a>
-      <a class="btn" href="https://www.linkedin.com/in/juana-m-laborde/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://www.linkedin.com/in/juana-m-laborde/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
   </div>
   <div><svg class="art hero-art" viewBox="0 0 360 340" role="img" aria-label="Ilustración de una app móvil con una notificación de saludo, un interruptor y un mensaje User friendly">
@@ -445,7 +460,7 @@ Todos los flujos incorporaron el desarrollo de roles de carga y aprobación, un 
 <dt>Contexto</dt><dd>El portfolio de Brand Gamification reunía productos de juego en plataformas como Meta y Twitch, formatos web y AR, que funcionaban como punto de encuentro entre marcas y audiencias. Entre las iniciativas estuvieron las trivias para PedidosYa (Mundial 2022) y Naranja X (fútbol argentino 2024). La del Mundial fue una pieza central en la estrategia mundialista del cliente.</dd>
 <dt>Objetivo y métrica</dt><dd>PedidosYa quería incorporar a su plataforma una trivia con respuestas correctas en un tiempo determinado y un podio de 10 ganadores. La dinámica ofrecía 10 preguntas por día, en una ronda diaria (7 por semana), durante 30 días: 30 rondas y 300 preguntas en total.</dd>
 <dt>Proceso</dt><dd>La experiencia se construyó de punta a punta en la aplicación del cliente: la interfaz replicó la estética y el lenguaje de la marca, se redactó todo el contenido de preguntas y respuestas y se dio soporte 24/7 a los stakeholders mientras estuvo activa.</dd>
-<dt>Resultado</dt><dd>Tras 4 meses de desarrollo, la trivia estuvo activa durante 30 días en los 15 países de Latinoamérica donde opera la marca (entre ellos Bolivia, Chile y Uruguay) y superó el millón de usuarios, con Argentina a la cabeza en uso. <a href="https://www.latinspots.com/noticia/pedidosya-entra-al-mundo-del-gaming-con-un-desafo-mundialista-dentro-de-la-plataforma/88654" target="_blank" rel="noopener">Ver la nota en LatinSpots</a>.</dd>
+<dt>Resultado</dt><dd>Tras 4 meses de desarrollo, la trivia estuvo activa durante 30 días en los 15 países de Latinoamérica donde opera la marca (entre ellos Bolivia, Chile y Uruguay) y superó el millón de usuarios, con Argentina a la cabeza en uso. <a href="https://www.latinspots.com/noticia/pedidosya-entra-al-mundo-del-gaming-con-un-desafo-mundialista-dentro-de-la-plataforma/88654" target="_blank" rel="noopener noreferrer">Ver la nota en LatinSpots</a>.</dd>
 </dl></details>
 </article>
 <article class="case c5">
@@ -513,28 +528,80 @@ Todos los flujos incorporaron el desarrollo de roles de carga y aprobación, un 
 
   <section id="contacto" class="cta">
     <h2>¿Trabajamos juntos?</h2>
-    <p>Me encantaría charlar. Escribime a <span id="mail-text">juanimlaborde@gmail.com</span> o encontrame en <a href="https://www.linkedin.com/in/juana-m-laborde/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+    <p>Me encantaría charlar. Escribime a <span id="mail-text">juanimlaborde [arroba] gmail.com</span> o encontrame en <a href="https://www.linkedin.com/in/juana-m-laborde/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
     <div class="row"><button class="copy" id="copy-mail" type="button"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span>Copiar mail</span></button></div>
   </section>
 </main>
 
 <script>
 (function(){
+  var d=document.documentElement;
+  try{if(window.top!==window.self){d.className+=' framed';}}catch(e){d.className+=' framed';}
+  var mail=['juanimlaborde','gmail.com'].join('@');
+  var mt=document.getElementById('mail-text');
+  if(mt){mt.textContent=mail;}
   var btn=document.getElementById('copy-mail');
   if(btn){
-    var mail='juanimlaborde@gmail.com';
+    var label=btn.querySelector('span')||btn;
     var select=function(){
-      try{var r=document.createRange();r.selectNode(document.getElementById('mail-text'));var s=window.getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Seleccionado';}catch(e){}
+      try{var r=document.createRange();r.selectNode(mt);var s=window.getSelection();s.removeAllRanges();s.addRange(r);label.textContent='Seleccionado';}catch(e){}
     };
     btn.addEventListener('click',function(){
-      try{navigator.clipboard.writeText(mail).then(function(){btn.textContent='Copiado';},select);}catch(e){select();}
+      try{navigator.clipboard.writeText(mail).then(function(){label.textContent='Copiado';},select);}catch(e){select();}
     });
   }
+  var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var v=document.getElementById('map-video');
-  if(v&&window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    try{v.pause();}catch(e){}
-    v.controls=true;
-  }
+  if(v&&rm){try{v.pause();}catch(e){}v.controls=true;}
+  if(rm||!('IntersectionObserver' in window)){return;}
+
+  d.className+=' js-anim';
+  var targets=document.querySelectorAll('.hero > div > *,.bio li,.tiles .tile,section > h2,section > .intro,.case,.fe-card,figure,.list li,.chips li,.card,.cta');
+  var seen=new Map();
+  Array.prototype.forEach.call(targets,function(el){
+    var p=el.parentNode,n=seen.get(p)||0;seen.set(p,n+1);
+    el.classList.add('rv');
+    el.style.setProperty('--d',Math.min(n,6));
+  });
+  var counted=function(el){
+    var b=el.matches&&el.matches('.tile')?el.querySelector('b'):null;
+    if(!b){return;}
+    var m=/^([~+]?)(\d+)(.*)$/.exec(b.textContent.trim());
+    if(!m){return;}
+    var end=parseInt(m[2],10),t0=null;
+    var step=function(t){
+      if(t0===null){t0=t;}
+      var k=Math.min((t-t0)/900,1),e=1-Math.pow(1-k,3);
+      b.textContent=m[1]+Math.round(end*e)+m[3];
+      if(k<1){requestAnimationFrame(step);}
+    };
+    requestAnimationFrame(step);
+  };
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');counted(e.target);io.unobserve(e.target);}
+    });
+  },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  Array.prototype.forEach.call(targets,function(el){io.observe(el);});
+
+  var bar=document.createElement('div');
+  bar.className='progress';bar.setAttribute('aria-hidden','true');
+  document.body.appendChild(bar);
+  var links=document.querySelectorAll('.dock a[href^="#"]');
+  var secs=Array.prototype.map.call(links,function(a){return document.querySelector(a.getAttribute('href'));});
+  var tick=false;
+  var update=function(){
+    tick=false;
+    var y=window.pageYOffset||d.scrollTop,h=d.scrollHeight-window.innerHeight;
+    d.style.setProperty('--sy',y);
+    bar.style.transform='scaleX('+(h>0?Math.min(y/h,1):0)+')';
+    var cur=-1;
+    secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<window.innerHeight*.4){cur=i;}});
+    Array.prototype.forEach.call(links,function(a,i){a.classList.toggle('on',i===cur);});
+  };
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(update);}},{passive:true});
+  window.addEventListener('resize',update);
+  update();
 })();
 </script>
 
